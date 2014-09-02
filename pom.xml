@@ -69,20 +69,36 @@
 			<id>Plugin Metrics</id>
 			<url>http://repo.mcstats.org/content/repositories/public</url>
 		</repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>http://repo.md-5.net/content/groups/public/</url>
+        </repository>
 	</repositories>
 	<dependencies>
-		<dependency> <!-- Bukkit implementation -->
-			<groupId>org.bukkit</groupId>
-			<artifactId>bukkit</artifactId>
-			<version>LATEST</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency> <!-- NMS blocks -->
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>LATEST</version>
-			<scope>provided</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+		<!--<dependency> &lt;!&ndash; Bukkit implementation &ndash;&gt;-->
+			<!--<groupId>org.bukkit</groupId>-->
+			<!--<artifactId>bukkit</artifactId>-->
+			<!--<version>LATEST</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+		<!--<dependency> &lt;!&ndash; NMS blocks &ndash;&gt;-->
+			<!--<groupId>org.bukkit</groupId>-->
+			<!--<artifactId>craftbukkit</artifactId>-->
+			<!--<version>LATEST</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>net.gravitydevelopment.updater</groupId>
 			<artifactId>updater</artifactId>

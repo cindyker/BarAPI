@@ -406,7 +406,10 @@ public class BarAPI extends JavaPlugin implements Listener {
 
 	private static void sendDragon(FakeDragon dragon, Player player) {
 		Util.sendPacket(player, dragon.getMetaPacket(dragon.getWatcher()));
-		Util.sendPacket(player, dragon.getTeleportPacket(player.getLocation().add(0, -300, 0)));
+
+		//Util.sendPacket(player, dragon.getTeleportPacket(player.getLocation().add(0, -300, 0)));
+        Util.sendPacket(player, dragon.getTeleportPacket(player.getLocation().add(player.getEyeLocation().getDirection().multiply(100))));
+
 	}
 
 	private static FakeDragon getDragon(Player player, String message) {
@@ -417,7 +420,8 @@ public class BarAPI extends JavaPlugin implements Listener {
 	}
 
 	private static FakeDragon addDragon(Player player, String message) {
-		FakeDragon dragon = Util.newDragon(message, player.getLocation().add(0, -300, 0));
+
+		FakeDragon dragon = Util.newDragon(message,player.getLocation().add(player.getEyeLocation().getDirection().multiply(100)));
 
 		Util.sendPacket(player, dragon.getSpawnPacket());
 
@@ -427,7 +431,9 @@ public class BarAPI extends JavaPlugin implements Listener {
 	}
 
 	private static FakeDragon addDragon(Player player, Location loc, String message) {
-		FakeDragon dragon = Util.newDragon(message, loc.add(0, -300, 0));
+
+		//FakeDragon dragon = Util.newDragon(message, loc.add(0, -300, 0));
+        FakeDragon dragon = Util.newDragon(message, player.getLocation().add(player.getEyeLocation().getDirection().multiply(100)));
 
 		Util.sendPacket(player, dragon.getSpawnPacket());
 
