@@ -29,7 +29,8 @@ public class v1_7 extends FakeDragon {
 	public Object getSpawnPacket() {
 		Class<?> Entity = Util.getCraftClass("Entity");
 		Class<?> EntityLiving = Util.getCraftClass("EntityLiving");
-		Class<?> EntityEnderDragon = Util.getCraftClass("EntityEnderDragon");
+		//Class<?> EntityEnderDragon = Util.getCraftClass("EntityEnderDragon");
+        Class<?> EntityEnderDragon = Util.getCraftClass("EntityWither");
 		Object packet = null;
 		try {
 			dragon = EntityEnderDragon.getConstructor(Util.getCraftClass("World")).newInstance(getWorld());
