@@ -5,7 +5,7 @@ import me.confuser.barapi.Util;
 import org.bukkit.Location;
 
 public abstract class FakeDragon {
-	public static final float MAX_HEALTH = 200;
+	public static final float MAX_HEALTH = 300;
 	private int x;
 	private int y;
 	private int z;
