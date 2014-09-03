@@ -409,6 +409,7 @@ public class BarAPI extends JavaPlugin implements Listener {
 
 		//Util.sendPacket(player, dragon.getTeleportPacket(player.getLocation().add(0, -300, 0)));
         Util.sendPacket(player, dragon.getTeleportPacket(player.getLocation().add(player.getEyeLocation().getDirection().multiply(20))));
+        Util.sendPacket(player,dragon.getEffectPacket());
 
 	}
 
@@ -424,6 +425,7 @@ public class BarAPI extends JavaPlugin implements Listener {
 		FakeDragon dragon = Util.newDragon(message,player.getLocation().add(player.getEyeLocation().getDirection().multiply(20)));
 
 		Util.sendPacket(player, dragon.getSpawnPacket());
+        Util.sendPacket(player,dragon.getEffectPacket());
 
 		players.put(player.getUniqueId(), dragon);
 
@@ -436,6 +438,7 @@ public class BarAPI extends JavaPlugin implements Listener {
         FakeDragon dragon = Util.newDragon(message, player.getLocation().add(player.getEyeLocation().getDirection().multiply(20)));
 
 		Util.sendPacket(player, dragon.getSpawnPacket());
+        Util.sendPacket(player,dragon.getEffectPacket());
 
 		players.put(player.getUniqueId(), dragon);
 

@@ -7,6 +7,8 @@ import java.lang.reflect.Method;
 import me.confuser.barapi.Util;
 
 import org.bukkit.Location;
+import net.minecraft.server.v1_7_R4.MobEffect;
+
 
 /**
 * This is the FakeDragon class for BarAPI.
@@ -129,6 +131,45 @@ public class v1_7 extends FakeDragon {
 
 		return packet;
 	}
+
+    @Override
+    public Object getEffectPacket() {
+
+        Class<?> PacketPlayOutEntityEffect = Util.getCraftClass("PacketPlayOutEntityEffect");
+        Object packet = null;
+
+        try{
+           /*  this.a = i;
+            this.b = (byte) (mobeffect.getEffectId() & 255);
+            this.c = (byte) (mobeffect.getAmplifier() & 255);
+            if (mobeffect.getDuration() > 32767) {
+                this.d = 32767;
+            } else {
+                this.d = (short) mobeffect.getDuration();
+            }*/
+
+            MobEffect me = new MobEffect(14,200000);
+            packet = PacketPlayOutEntityEffect.getConstructor(new Class<?>[] { int.class, MobEffect.class }).newInstance(this.id,  me);
+
+        }catch (IllegalArgumentException e) {
+        e.printStackTrace();
+    } catch (SecurityException e) {
+        e.printStackTrace();
+    } catch (InstantiationException e) {
+        e.printStackTrace();
+    } catch (IllegalAccessException e) {
+        e.printStackTrace();
+    } catch (InvocationTargetException e) {
+        e.printStackTrace();
+    } catch (NoSuchMethodException e) {
+        e.printStackTrace();
+    }
+
+
+        return packet;
+    }
+
+
 
 	@Override
 	public Object getTeleportPacket(Location loc) {

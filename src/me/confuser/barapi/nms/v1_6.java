@@ -129,6 +129,14 @@ public class v1_6 extends FakeDragon {
 		return packet;
 	}
 
+    @Override
+    public Object getEffectPacket()
+    {
+       Object packet = null;
+       return packet;
+     }
+
+
 	@Override
 	public Object getTeleportPacket(Location loc) {
 		Class<?> packet_class = Util.getCraftClass("Packet34EntityTeleport");

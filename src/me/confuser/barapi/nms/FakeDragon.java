@@ -135,6 +135,8 @@ public abstract class FakeDragon {
 
 	public abstract Object getMetaPacket(Object watcher);
 
+    public abstract Object getEffectPacket();
+
 	public abstract Object getTeleportPacket(Location loc);
 
 	public abstract Object getWatcher();
