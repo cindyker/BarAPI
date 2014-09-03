@@ -80,12 +80,14 @@
             <artifactId>spigot-api</artifactId>
             <version>1.7.10-R0.1-SNAPSHOT</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>1.7.10-R0.1-SNAPSHOT</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
 		<!--<dependency> &lt;!&ndash; Bukkit implementation &ndash;&gt;-->
 			<!--<groupId>org.bukkit</groupId>-->
